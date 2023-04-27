@@ -1,0 +1,2 @@
+C:\Users\guill\Desktop\upc\game_dados\ConsoleApplication1\ConsoleApplication1\x64\Debug\ConsoleApplication1.vcxproj.AssemblyReference.cache
+C:\Users\guill\Desktop\upc\game_dados\ConsoleApplication1\ConsoleApplication1\x64\Debug\ConsoleApplication1.vcxproj.SuggestedBindingRedirects.cache

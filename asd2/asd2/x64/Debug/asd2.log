@@ -1,0 +1,7 @@
+﻿  pch.cpp
+  asd2.cpp
+C:\Users\guill\Desktop\upc\game_dados\asd2\asd2\asd2.cpp(25,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\guill\Desktop\upc\game_dados\asd2\asd2\asd2.cpp(248,1): error C2059: error de sintaxis: '}'
+C:\Users\guill\Desktop\upc\game_dados\asd2\asd2\asd2.cpp(248,1): error C2143: error de sintaxis: falta ';' delante de '}'
+  AssemblyInfo.cpp
+  Generando código...
