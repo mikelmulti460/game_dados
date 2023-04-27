@@ -1,2 +1,0 @@
-C:\Users\guill\Desktop\upc\game_dados\ejecucion dados\ejecucion dados\x64\Debug\ejecucion dados.vcxproj.AssemblyReference.cache
-C:\Users\guill\Desktop\upc\game_dados\ejecucion dados\ejecucion dados\x64\Debug\ejecucion dados.vcxproj.SuggestedBindingRedirects.cache

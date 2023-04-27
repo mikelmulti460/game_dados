@@ -1,8 +1,0 @@
-﻿  pch.cpp
-  AssemblyInfo.cpp
-  ConsoleApplication1.cpp
-C:\Users\guill\Desktop\upc\game_dados\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(24,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  Generando código...
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
-  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  ConsoleApplication1.vcxproj -> C:\Users\guill\Desktop\upc\game_dados\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
