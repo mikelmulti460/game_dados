@@ -139,19 +139,46 @@ void print_ascii_art(){
 
 
 
-   // int turno_cada_jugador(int N, int jugador, int contador_jugador, int dado1, int dado2) 
-//{
-    //contador_jugador = 0;
-   // do {
-       // if (jugador==1) {
-           // contador_jugador = contador_jugador+1;
-           // cout << "Turno del jugador "<< contador_jugador << endl;
-           // cout << "presione 1 para lanzar sus dados" << endl;
-             //  if (kbhit()) { jugador = getch(); 
-              //  switch (jugador) { 
-              //  case 1:
-               //     dado1 = lanzar_dados();
-               //     dado2 = lanzar_dados();
-               //     break; 
-              //  } 
-            //}
+   int turno_cada_jugador(int N, int jugador, int dado1, int dado2) 
+{
+   do {
+      if (player_name_1) 
+      {
+            cout << "Es el turno de "<< player_name_1 << endl;
+            cout << "presione 1 para lanzar sus dados" << endl;
+               if (kbhit()) { jugador = getch(); 
+                switch (jugador) 
+                { 
+                case 1:
+                    dado1 = lanzar_dados();
+                    dado2 = lanzar_dados();
+                    break; 
+                } 
+            }
+
+            puntos_jugador1 = reglas_puntos(num_turnos, dado1, dado2, puntos_jugador1);
+            turnos_jugador = reglas_turnos(num_turnos, dado1, dado2, turnos_jugador);
+        }
+              if (player_name_2) 
+      {
+            cout << "Es el turno de "<< player_name_2 << endl;
+            cout << "presione  para lanzar sus dados" << endl;
+               if (kbhit()) { jugador = getch(); 
+                switch (jugador) 
+                { 
+                case 2:
+                    dado1 = lanzar_dados();
+                    dado2 = lanzar_dados();
+                    break; 
+                } 
+            }
+
+            puntos_jugador1 = reglas_puntos(num_turnos, dado1, dado2, puntos_jugador1);
+            turnos_jugador = reglas_turnos(num_turnos, dado1, dado2, turnos_jugador);
+        }
+    } while (num_turnos>0);
+    {
+
+    }
+}   
+
