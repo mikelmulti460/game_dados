@@ -52,8 +52,8 @@ int score_rules(int die_value_1, int die_value_2, int score_player) {
 
 }
 
-int turn_rules(int die_value_1, int die_value_2, int score_player) {
-    return score_player;
+int turn_rules(int die_value_1, int die_value_2, int turn_player) {
+    return turn_player;
 }
 
 int get_turns_number() {
@@ -139,46 +139,56 @@ void print_ascii_art(){
 
 
 
-   int turno_cada_jugador(int N, int jugador, int dado1, int dado2) 
-{
-   do {
-      if (player_name_1) 
-      {
-            cout << "Es el turno de "<< player_name_1 << endl;
-            cout << "presione 1 para lanzar sus dados" << endl;
-               if (kbhit()) { jugador = getch(); 
-                switch (jugador) 
-                { 
-                case 1:
-                    dado1 = lanzar_dados();
-                    dado2 = lanzar_dados();
-                    break; 
-                } 
-            }
+void iniciar_turnos(
+    string name_player_1,
+    string name_player_2,
+    int turn_player_1,
+    int turn_player_2
+){
+    string winner,
+    int current_turn = 1;
+    int score_player_1 = 0;
+    int score_player_2 = 0;
+    int dice_value_1 = 0;
+    int dice_value_2 = 0;
+    
 
-            puntos_jugador1 = reglas_puntos(num_turnos, dado1, dado2, puntos_jugador1);
-            turnos_jugador = reglas_turnos(num_turnos, dado1, dado2, turnos_jugador);
+    while(turn_player_1 != 0 || turn_player_2 != 0 ){
+        if (turn_player_1 != 0){
+            cout << "Es el turno de " << name_player_1 << endl;
+            cout << "Presione enter para lanzar sus dados" << endl;
+            cin.get();
+            turn_player_1--;
+            //dice_value_1 = lanzar_dado();
+            //dice_value_2 = lanzar_dado();
+            score_player_1 = score_rules(dice_value_1, dice_value_2, score_player_1);
+            turn_player_1 = turn_rules(dice_value_1, dice_value_2, turn_player_1);
         }
-              if (player_name_2) 
-      {
-            cout << "Es el turno de "<< player_name_2 << endl;
-            cout << "presione  para lanzar sus dados" << endl;
-               if (kbhit()) { jugador = getch(); 
-                switch (jugador) 
-                { 
-                case 2:
-                    dado1 = lanzar_dados();
-                    dado2 = lanzar_dados();
-                    break; 
-                } 
-            }
-
-            puntos_jugador1 = reglas_puntos(num_turnos, dado1, dado2, puntos_jugador1);
-            turnos_jugador = reglas_turnos(num_turnos, dado1, dado2, turnos_jugador);
+        if (turn_player_2 != 0){
+            cout << "Es el turno de " << name_player_2 << endl;
+            cout << "Presione enter para lanzar sus dados" << endl;
+            cin.get();
+            turn_player_2--;
+            //dice_value_1 = lanzar_dado();
+            //dice_value_2 = lanzar_dado();
+            score_player_2 = score_rules(dice_value_1, dice_value_2, score_player_2);
+            turn_player_2 = turn_rules(dice_value_1, dice_value_2, turn_player_2);
         }
-    } while (num_turnos>0);
-    {
-
     }
-}   
+        if (score_player_1>score_player_2){
+                winner= name_player_1;
+        }else
+        {
+            winner= name_player_2;
+        }
+    cout << "El ganador es: " << winner << endl;
+    cout << "Puntaje: " << endl;
+    cout <<name_player_1<<": " << score_player_1 << endl;
+    cout <<name_player_2<<": " << score_player_2 << endl;
+    //TODO: Definir Ganador, puntaje
+}
+
+
+
+
 

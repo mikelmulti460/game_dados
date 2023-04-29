@@ -5,5 +5,3 @@ Juego para trabajo parcial de UPC
 - Mikel Aranda
 - André Huamán 
 - Luis Saldaña
-hola xd
-
