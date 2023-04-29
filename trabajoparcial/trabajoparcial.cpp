@@ -50,10 +50,33 @@ int score_rules(int die_value_1, int die_value_2, int score_player) {
         return score_player;
     }
 
+    if ((die_value_1 + die_value_2) % 2 != 0) {
+        score_player = score_player + (die_value_1 + die_value_2);
+        return score_player;
+    }
 
+    if ((die_value_1 + die_value_2) > 10) {
+        score_player = score_player + 5;
+        return score_player;
+    }
+
+    if ((die_value_1 + die_value_2) < 5) {
+        score_player = score_player - 5;
+        return score_player;
+    }
 }
 
 int turn_rules(int die_value_1, int die_value_2, int turn_player) {
+     if (die_value_1 == 6 && die_value_2 == 6) {
+        turn_player = turn_player + 1;
+    }
+
+    if (die_value_1 == 1) {
+        turn_player = turn_player - 1;
+    }
+        if (die_value_2 == 1) {
+        turn_player = turn_player - 1;
+    }
     return turn_player;
 }
 
