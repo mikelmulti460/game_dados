@@ -14,7 +14,7 @@ void print_ascii_art();
 string get_player_name(int player_number);
 void menu();
 int get_turns_number();
-//int turno_cada_jugador(int N, int jugador, int contador_jugador, int dado1, int dado2);
+void star_turns(string player_name_1, string player_name_2, int turn_player_1, int turn_player_2);
 
 int main()
 {
@@ -32,6 +32,7 @@ int main()
     num_turnos = get_turns_number();
     turn_player_1 = num_turnos;
     turn_player_2 = num_turnos;
+    star_turns(player_name_1, player_name_2,turn_player_1,turn_player_2);
     return 0;
 }
 
@@ -139,14 +140,13 @@ void print_ascii_art(){
 
 
 
-void iniciar_turnos(
-    string name_player_1,
-    string name_player_2,
+void star_turns(
+    string player_name_1,
+    string player_name_2,
     int turn_player_1,
     int turn_player_2
 ){
     string winner,
-    int current_turn = 1;
     int score_player_1 = 0;
     int score_player_2 = 0;
     int dice_value_1 = 0;
@@ -155,7 +155,7 @@ void iniciar_turnos(
 
     while(turn_player_1 != 0 || turn_player_2 != 0 ){
         if (turn_player_1 != 0){
-            cout << "Es el turno de " << name_player_1 << endl;
+            cout << "Es el turno de " << player_name_1<< endl;
             cout << "Presione enter para lanzar sus dados" << endl;
             cin.get();
             turn_player_1--;
@@ -165,7 +165,7 @@ void iniciar_turnos(
             turn_player_1 = turn_rules(dice_value_1, dice_value_2, turn_player_1);
         }
         if (turn_player_2 != 0){
-            cout << "Es el turno de " << name_player_2 << endl;
+            cout << "Es el turno de " << player_name_2 << endl;
             cout << "Presione enter para lanzar sus dados" << endl;
             cin.get();
             turn_player_2--;
@@ -176,15 +176,15 @@ void iniciar_turnos(
         }
     }
         if (score_player_1>score_player_2){
-                winner= name_player_1;
+                winner= player_name_1;
         }else
         {
-            winner= name_player_2;
+            winner= player_name_2;
         }
     cout << "El ganador es: " << winner << endl;
     cout << "Puntaje: " << endl;
-    cout <<name_player_1<<": " << score_player_1 << endl;
-    cout <<name_player_2<<": " << score_player_2 << endl;
+    cout <<player_name_1<<": " << score_player_1 << endl;
+    cout <<player_name_2<<": " << score_player_2 << endl;
     //TODO: Definir Ganador, puntaje
 }
 
