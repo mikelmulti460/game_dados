@@ -14,6 +14,7 @@ void print_ascii_art();
 string get_player_name(int player_number);
 void menu();
 int get_turns_number();
+int get_turn_player();
 void star_turns(string player_name_1, string player_name_2, int turn_player_1, int turn_player_2);
 
 int main()
@@ -67,7 +68,9 @@ int score_rules(int die_value_1, int die_value_2, int score_player) {
 }
 
 int turn_rules(int die_value_1, int die_value_2, int turn_player) {
-     if (die_value_1 == 6 && die_value_2 == 6) {
+  do
+     {
+    if (die_value_1 == 6 && die_value_2 == 6) {
         turn_player = turn_player + 1;
     }
 
@@ -77,6 +80,7 @@ int turn_rules(int die_value_1, int die_value_2, int turn_player) {
         if (die_value_2 == 1) {
         turn_player = turn_player - 1;
     }
+     } while (turn_player>0);
     return turn_player;
 }
 
