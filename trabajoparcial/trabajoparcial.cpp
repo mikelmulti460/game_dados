@@ -18,6 +18,7 @@ int get_turns_number();
 void star_turns(string player_name_1, string player_name_2, int turn_player_1, int turn_player_2);
 void print_graph(int value, int current_player, int x, int y);
 int launch_dice(int current_player, int x, int y);
+void clean_old_turn(int current_player, bool new_turn);
 // int turno_cada_jugador(int N, int jugador, int contador_jugador, int dado1, int dado2);
 int main()
 {
