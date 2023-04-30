@@ -342,6 +342,10 @@ int score_rules(int dice_value_1, int dice_value_2, int score_player, string pla
         Console::SetCursorPosition(current_x, current_y);
         cout << "Su puntaje actual es: " << score_player << endl;
     }
+    if (score_player<0)
+    {
+        score_player = 0;
+    }
     current_y = current_y + 1;
     Console::SetCursorPosition(current_x, current_y);
     cout << "Su puntaje final en este turno es: " << score_player << endl;
@@ -349,7 +353,7 @@ int score_rules(int dice_value_1, int dice_value_2, int score_player, string pla
 }
 
 int turn_rules(int dice_value_1, int dice_value_2, int turn_player, int current_player, string player_name)
-{
+{    
     int current_x = 0 + (current_player == 2) * 60;
     int current_y = 18;
     int turn_change = 0;
@@ -370,7 +374,10 @@ int turn_rules(int dice_value_1, int dice_value_2, int turn_player, int current_
         Console::SetCursorPosition(current_x, current_y);
         cout << player_name << " ha sacado un 1, por lo que pierde un turno"<< endl; 
     }
-
+    if (turn_player<0)
+    {
+        turn_player = 0;
+    }
     return turn_player;
 }
 
