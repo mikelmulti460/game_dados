@@ -14,8 +14,14 @@ void print_ascii_art();
 string get_player_name(int player_number);
 void menu();
 int get_turns_number();
+
 int get_turn_player();
 void star_turns(string player_name_1, string player_name_2, int turn_player_1, int turn_player_2);
+
+int print_(int winner);
+int launch_dice();
+//int turno_cada_jugador(int N, int jugador, int contador_jugador, int dado1, int dado2);
+
 
 int main()
 {
@@ -92,7 +98,13 @@ int get_turns_number() {
         if (num_turnos <= 2 && num_turnos >= 15)
         {
             cout << "Dato ingresado no valido.";
+             if (cin.fail()) {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Debe ingresar un numero" << endl;
         }
+        }
+       
 
     } while (num_turnos <= 2 && num_turnos >= 15);
     return num_turnos;
@@ -138,6 +150,59 @@ void print_ascii_art(){
             `8888888P' .8'       `8. `88888. ,8'         `         `8.`8888. 8 888888888888
     )";
     cout << ascii_art << endl;
+
+}
+void print_graph(int value, int current_player ) {
+    // Establecer el color correspondiente
+    if (current_player == 1) {
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // Red for player 1
+    }
+    else {
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10); // Red for player 2
+    }
+    // Imprimir el gráfico del dado
+    cout << "+-------+" << endl;
+    if (value == 1) {
+        cout << "|       |" << endl;
+        cout << "|   *   |" << endl;
+        cout << "|       |" << endl;
+    }
+    else if (value == 2) {
+        cout << "|     * |" << endl;
+        cout << "|       |" << endl;
+        cout << "| *     |" << endl;
+    }
+    else if (value == 3) {
+        cout << "|     * |" << endl;
+        cout << "|   *   |" << endl;
+        cout << "| *     |" << endl;
+    }
+    else if (value == 4) {
+        cout << "| *   * |" << endl;
+        cout << "|       |" << endl;
+        cout << "| *   * |" << endl;
+    }
+    else if (value == 5) {
+        cout << "| *   * |" << endl;
+        cout << "|   *   |" << endl;
+        cout << "| *   * |" << endl;
+    }
+    else if (value == 6) {
+        cout << "| *   * |" << endl;
+        cout << "| *   * |" << endl;
+        cout << "| *   * |" << endl;
+    }
+    cout << "+-------+" << endl;
+
+    // Volver al color normal
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+}
+
+
+int launch_dice(int current_player) {
+    int random_number = rand() % 6 + 1;
+    print_graph(random_number, current_player);
+    return random_number;
 }
 
 // validamos que se ingrese un n�mero 
