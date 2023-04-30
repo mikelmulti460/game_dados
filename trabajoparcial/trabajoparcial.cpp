@@ -5,6 +5,17 @@
 #include <conio.h>
 #include <Windows.h>
 
+/*
+    Trabajo Parcial - 30/04/2023
+    Universidad Peruana de Ciencias Aplicadas (UPC)
+    Curso: Introducción a los algoritmos
+    Profesor: Henry Antonio Mendoza Puerta
+    Integrantes:
+        - Mikel Aranda Vieira - U20231E292
+        - Luis Guillermo Saldaña Ramirez- U202313109
+        - André César Huamán Infanzón - U202212857
+*/
+
 using namespace System;
 using namespace std;
 
@@ -410,15 +421,7 @@ void clean_old_turn(int current_player, bool new_turn)
         }
     }
 }
-//int menu()
-//{
-//    print_ascii_art();
-//    cout << "Bienvenido al juego de dados" << endl;
-//    cout << "(*) Presione enter para continuar" << endl;
-//    cout << "(*) Presione CTRL + E para salir" << endl;
-//    cin.get();
-//    system("cls");
-//}
+
 void print_graph(int value, int current_player, int x, int y)
 {
     // Establecer el color correspondiente
