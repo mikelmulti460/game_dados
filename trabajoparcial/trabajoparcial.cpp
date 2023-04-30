@@ -202,16 +202,24 @@ void star_turns(
             turn_player_2 = turn_rules(dice_value_1, dice_value_2, turn_player_2);
         }
     }
+
+        cout << "Puntaje: " << endl;
+        cout <<player_name_1<<": " << score_player_1 << endl;
+        cout <<player_name_2<<": " << score_player_2 << endl;
+
         if (score_player_1>score_player_2){
                 winner= player_name_1;
-        }else
-        {
-            winner= player_name_2;
+                cout << "El ganador es: " << winner << endl;
         }
-    cout << "El ganador es: " << winner << endl;
-    cout << "Puntaje: " << endl;
-    cout <<player_name_1<<": " << score_player_1 << endl;
-    cout <<player_name_2<<": " << score_player_2 << endl;
+
+        if (score_player_2>score_player_1){
+                winner= player_name_2;
+                cout << "El ganador es: " << winner << endl;
+        }
+
+        if (score_player_2==score_player_1){
+            cout << "Empate" << endl;
+        }
     //TODO: Definir Ganador, puntaje
 }
 
