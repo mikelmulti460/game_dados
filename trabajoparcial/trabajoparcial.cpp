@@ -37,6 +37,33 @@ int main()
     return 0;
 }
 
+void animar_dados(int value, int current_player)
+{
+    // Establecer el color correspondiente
+    if (current_player == 1)
+    {
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // Red for player 1
+    }
+    else
+    {
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10); // Red for player 2
+    }
+
+    // Animar los dados
+    for (int i = 1; i <= 6; i++)
+    {
+        print_graph(i, current_player);
+        Sleep(1000);
+        system("cls"); // Limpiar la pantalla antes de imprimir el siguiente dado
+    }
+
+    // Imprimir el gráfico del dado final
+    print_graph(value, current_player);
+
+    // Volver al color normal
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+}
+
 int score_rules(int dice_value_1, int dice_value_2, int score_player, string player_name)
 {
     int score_change = 0;
